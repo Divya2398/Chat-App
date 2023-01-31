@@ -57,10 +57,11 @@ const Login = () => {
       toast({
         title: "Error",
         description: error.response.data.message,
+        //description: error.message,
         status: "success",
         duration: 6000,
         isClosable: true,
-        position: "right",
+        position: "top-left",
       });
       setIsloading(false);
     }
