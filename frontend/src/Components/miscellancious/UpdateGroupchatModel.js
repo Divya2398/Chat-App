@@ -31,7 +31,7 @@ const UpdateGroupchatModel = ({ fetchagain, setFetchagain }) => {
   const [searchResult, setSearchResult] = useState([]);
   const [loading, setLoading] = useState(false);
   const [renameloading, setRenameloading] = useState(false);
-  const toast = useToast;
+  const toast = useToast();
 
   //rename
   const handleRename = async () => {
@@ -132,8 +132,11 @@ const UpdateGroupchatModel = ({ fetchagain, setFetchagain }) => {
         },
         config
       );
-      setSelectedChat(data);
-      // setFetchagain(!fetchagain);
+      console.log(selectedChat);
+      usertoremove._id === user._id
+        ? setSelectedChat("")
+        : setSelectedChat(data);
+      setFetchagain(!fetchagain);
       setLoading(false);
     } catch (error) {
       toast({

@@ -5,7 +5,7 @@ import Mychats from "./Mychats";
 import Chatbox from "./Chatbox";
 import Sidedrawer from "./miscellancious/Sidedrawer";
 const Chatpage = () => {
-  const [fetchagain, setFectagain] = useState(false);
+  const [fetchagain, setFetchagain] = useState(false);
   const { user } = ChatState();
   return (
     <div style={{ width: "100%" }}>
@@ -19,7 +19,7 @@ const Chatpage = () => {
       >
         {user && <Mychats fetchagain={fetchagain} />}
         {user && (
-          <Chatbox fetchagain={fetchagain} setFectagain={setFectagain} />
+          <Chatbox fetchagain={fetchagain} setFetchagain={setFetchagain} />
         )}
       </Box>
     </div>
